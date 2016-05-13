@@ -28,6 +28,8 @@ gem 'active_model_serializers'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise'
+
 group :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
