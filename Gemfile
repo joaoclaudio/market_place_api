@@ -43,3 +43,9 @@ group :development do
   gem 'sqlite3'
 end
 
+gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
+gem 'compass-rails', '2.0.4'
+gem 'furatto', github: "IcaliaLabs/furatto-rails"
+gem 'font-awesome-rails'
+gem 'simple_form'
+
