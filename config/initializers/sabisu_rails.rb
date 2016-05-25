@@ -25,7 +25,7 @@ SabisuRails.setup do |config|
 
   # Resources on the api
   # config.resources = [:products, :users...]
-  config.resources = [:users]
+  config.resources = [:users, :products]
 
   # Default resource
   config.default_resource = :users

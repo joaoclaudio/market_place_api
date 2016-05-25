@@ -32,15 +32,16 @@ gem 'devise'
 
 group :test do
   gem "rspec-rails"
-  gem "factory_girl_rails"
-  gem 'ffaker'
+  gem 'rspec-collection_matchers'
   gem 'shoulda-matchers'
   gem 'minitest'
 end
 
-group :development do
+group :development, :test do
   # Use sqlite3 as the database for Active Record
+  gem "factory_girl_rails"
   gem 'sqlite3'
+  gem 'ffaker'
 end
 
 gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"

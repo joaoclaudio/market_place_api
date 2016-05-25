@@ -37,12 +37,18 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "destroys the associated products on self destruct" do
-    user = FactoryGirl.build(:user)
-    products = user.products
-    user.destroy
-    products.each do |product|
-      expect(Product.find(product)).to raise_error ActiveRecord::RecordNotFound
+  describe "#products association" do
+    before (:each) do
+      @user.save
+      3.times { FactoryGirl.create :product, user: @user }
+    end
+
+    it "destroys the associated products on self destruct" do
+      products = @user.products
+      @user.destroy
+      products.each do |product|
+        expect(Product.find(product)).to raise_error ActiveRecord::RecordNotFound
+      end
     end
   end
 
