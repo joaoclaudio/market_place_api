@@ -9,7 +9,11 @@ RSpec.describe Api::V1::UsersController, type: :controller do
     end
 
     it "returns the information about a reporter on a hash" do
-      user_response = json_response
+      user_response = json_response[:user]
+      puts '---------------------'
+      puts json_response
+      puts '---------------------'
+      
       expect(user_response[:email]).to eql @user.email
     end
 
@@ -24,7 +28,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       end
 
       it "renders the json representation for the user record just created" do
-        user_response = json_response
+        user_response = json_response[:user]
         expect(user_response[:email]).to eql @user_attributes[:email]
       end
 
@@ -64,7 +68,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       end
 
       it "renders the json representation for the updated user" do
-        user_response = json_response
+        user_response = json_response[:user]
         expect(user_response[:email]).to eql "newmail@example.com"
       end
 
