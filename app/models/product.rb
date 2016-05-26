@@ -5,6 +5,9 @@ class Product < ActiveRecord::Base
 
   belongs_to :user
 
+  has_many :placements
+  has_many :orders, through: :placements
+
   def self.search(params = {})
     products = params[:product_ids].present? ? Product.find(params[:product_ids]) : Product.all
 
