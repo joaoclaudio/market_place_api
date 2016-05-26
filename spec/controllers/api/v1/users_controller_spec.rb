@@ -10,10 +10,6 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
     it "returns the information about a reporter on a hash" do
       user_response = json_response[:user]
-      puts '---------------------'
-      puts json_response
-      puts '---------------------'
-      
       expect(user_response[:email]).to eql @user.email
     end
 
