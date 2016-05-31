@@ -40,6 +40,7 @@ group :test do
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers'
   gem 'minitest'
+  gem 'email_spec'
 end
 
 group :development, :test do
