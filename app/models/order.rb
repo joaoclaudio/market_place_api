@@ -3,6 +3,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
 
   validates :user_id, presence: true
+  validates_with EnoughProductsValidator
 
   has_many :placements
   has_many :products, through: :placements
